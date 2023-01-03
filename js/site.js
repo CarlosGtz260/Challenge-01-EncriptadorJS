@@ -18,4 +18,12 @@ function decrypt(encrypted){
     return encrypted;
 }
 
-
+function init(type){
+    var text = document.querySelector("#inputText").value;
+    console.log(type);
+    if(type == 0){
+        console.log(encrypt(text));
+    }else{
+        console.log(decrypt(text));
+    }
+}

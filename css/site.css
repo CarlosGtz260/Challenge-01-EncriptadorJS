@@ -1,19 +1,24 @@
 body{
     background-color:  #F3F5FC;
+    font-family: Inter, sans-serif;
 
 }
 
-main{
-    padding-top: 40px;
-    margin: auto 5%;
+main{    
+
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 2%;
 }
+
 
 .grid-container {
     display: grid;
-    grid-template-columns: 80% auto;
-    padding: 10px;
-    
+    grid-template-columns: 100%;
+    height: 100%;    
  }
+
 
 
  .grid-item {
@@ -21,29 +26,49 @@ main{
     font-size: 30px;
     text-align: center;
     flex-direction: column;
-    height: 100%;
-
+    display: flex;
   }
 
-textarea{
-    
+  .grid-item:first-child div{
+    margin: 2% 0;
+  }
+
+  .grid-item:first-child{
+    margin: 0 15% 
+  }
+
+
+  #encrypter{    
+    display: flex;
+    height: 55%;
+    flex-direction: column; 
+  }
+
+  .preview-container{
+    display: flex;
+    flex-direction: column; 
+    margin: auto 0;
+  }
+
+textarea{    
+  color: #0A3871;
+  text-transform: lowercase;
     resize: none;
     width: 100%;
     height: 100%;
-    background-color:  #F3F5FC;
-    border: none;
-    font-family: Inter, sans-serif;
+    flex-basis: 100%;
+    font-style: normal;
+    background-color:  transparent;
+    /*border: none;*/
     font-size: 32px;
     line-height: 48px;
 }
 
-  #encrypter{
-    padding: 0 9%;
+textarea::placeholder {
+  color: #0A3871;
+}
 
-
-  }
-
-  #outputMsg{
+#outputMsg{
     /* White */
     background: #FFFFFF;
     /* shadow */
@@ -53,7 +78,70 @@ textarea{
 
   #logo{
     text-align: left;
-    margin-bottom: 3%;
+  }
+
+
+
+  .legend-container{
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    /*padding: 0 9%*/
+
+  }
+
+  .legend-container p{
+    margin-left: 8px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    color: #495057;
+  }
+
+
+
+
+  button{
+    width: 45%;
+    border-radius: 10px;
+    min-height: 50px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #0A3871;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 12px;
+    color: #0A3871;
+  }
+
+  #enc{    
+    background-color: #0a3871;
+    color: white;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .preview-container p:first-of-type{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;    
+    color: #343A40;
+    order: 0;
+  }
+
+  .preview-container p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;  
+    color: #495057;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
   }
 
   
+  @media only screen and (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 78% 22%;
+    }
+  }
