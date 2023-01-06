@@ -33,14 +33,12 @@ main{
     margin: 2% 0;
   }
 
-  .grid-item:first-child{
-    margin: 0 15% 
-  }
+  
 
 
   #encrypter{    
     display: flex;
-    height: 55%;
+    height: 70%;
     flex-direction: column; 
   }
 
@@ -59,9 +57,13 @@ textarea{
     flex-basis: 100%;
     font-style: normal;
     background-color:  transparent;
-    /*border: none;*/
+    border: none;
     font-size: 32px;
     line-height: 48px;
+}
+
+textarea:focus{
+  outline: 0;
 }
 
 textarea::placeholder {
@@ -78,6 +80,7 @@ textarea::placeholder {
 
   #logo{
     text-align: left;
+    max-width: 10%;
   }
 
 
@@ -90,6 +93,10 @@ textarea::placeholder {
 
   }
 
+  .preview-container img{
+    display: none;
+  }
+
   .legend-container p{
     margin-left: 8px;
     display: inline-block;
@@ -98,11 +105,11 @@ textarea::placeholder {
     color: #495057;
   }
 
-
+ 
 
 
   button{
-    width: 45%;
+    width: 100%;    
     border-radius: 10px;
     min-height: 50px;
     border: none;
@@ -110,9 +117,11 @@ textarea::placeholder {
     border: 1px solid #0A3871;
     cursor: pointer;
     font-weight: bold;
-    margin-left: 12px;
     color: #0A3871;
+    margin: 0 1.5%
   }
+
+
 
   #enc{    
     background-color: #0a3871;
@@ -139,9 +148,38 @@ textarea::placeholder {
     flex-grow: 0;
   }
 
+  .result-container{
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+  }
+
+  .result-container textarea{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #495057;
+  }
   
+  .button-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
   @media only screen and (min-width: 1200px) {
     .grid-container {
         grid-template-columns: 78% 22%;
     }
+
+    .grid-item:first-child{
+      margin: 0 15% 
+    }
+    
+    .preview-container img{
+      display: inherit;
+    }
+   
   }
+
