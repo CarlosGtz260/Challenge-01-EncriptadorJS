@@ -12,55 +12,82 @@ main{
     padding: 2%;
 }
 
-
 .grid-container {
     display: grid;
     grid-template-columns: 100%;
     height: 100%;    
  }
 
-
-
  .grid-item {
-    padding: 20px;
+    padding: 30px;
     font-size: 30px;
     text-align: center;
     flex-direction: column;
     display: flex;
   }
 
-  .grid-item:first-child div{
-    margin: 2% 0;
+  .grid-item div{
+    display: flex;
+
   }
 
   
-
-
-  #encrypter{    
-    display: flex;
-    height: 70%;
+  .input-container{    
+    height: 90%;
     flex-direction: column; 
   }
-
+  .legend-container{    
+    margin: 10px 0;
+  }
+  .button-container{
+    flex-direction: row;
+    gap: 45px;
+  }
   .preview-container{
-    display: flex;
     flex-direction: column; 
     margin: auto 0;
+  }
+  .result-container{
+    height: 90%;
+    flex-direction: column;
+  }
+
+  .result-container textarea{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #495057;
+    line-height: 150%;
+  }
+
+  .input-container p{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    color: #495057;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .input-container img{
+    max-width: 12px;
   }
 
 textarea{    
   color: #0A3871;
   text-transform: lowercase;
-    resize: none;
-    width: 100%;
-    height: 100%;
-    flex-basis: 100%;
-    font-style: normal;
-    background-color:  transparent;
-    border: none;
-    font-size: 32px;
-    line-height: 48px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  flex-basis: 100%;
+  font-style: normal;
+  background-color:  transparent;
+  border: none;
+  font-size: 32px;
+  line-height: 48px;
 }
+
+
 
 textarea:focus{
   outline: 0;
@@ -83,42 +110,26 @@ textarea::placeholder {
     max-width: 10%;
   }
 
-
-
-  .legend-container{
-    display: flex;
-    align-items: center;
-    margin: 16px 0;
-    /*padding: 0 9%*/
-
-  }
-
   .preview-container img{
     display: none;
   }
 
-  .legend-container p{
-    margin-left: 8px;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 18px;
-    color: #495057;
-  }
-
- 
-
-
   button{
     width: 100%;    
-    border-radius: 10px;
+    border-radius: 24px;
     min-height: 50px;
-    border: none;
     background-color: transparent;
     border: 1px solid #0A3871;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 400;
     color: #0A3871;
-    margin: 0 1.5%
+    padding: 24px;
+    flex-grow: 0;
+    transition: 0.2s;
+  }
+
+  button:hover{    
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
 
@@ -126,7 +137,6 @@ textarea::placeholder {
   #enc{    
     background-color: #0a3871;
     color: white;
-    transition: all 0.5s ease-in-out;
   }
 
   .preview-container p:first-of-type{
@@ -148,38 +158,49 @@ textarea::placeholder {
     flex-grow: 0;
   }
 
-  .result-container{
-    display: flex;
-    height: 90%;
-    flex-direction: column;
+  footer{
+    justify-content: center;
+    text-align: center;
   }
 
-  .result-container textarea{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: #495057;
-  }
-  
-  .button-container{
-    display: flex;
-    flex-direction: row;
-  }
-
-
+ 
 
   @media only screen and (min-width: 1200px) {
     .grid-container {
-        grid-template-columns: 78% 22%;
+        grid-template-columns: 5% 72% 23%;
     }
 
-    .grid-item:first-child{
-      margin: 0 15% 
+    #inputText{
+      padding-top: 12%;
+    }
+
+    div > .encrypter{
+      margin: 0 10% 
     }
     
     .preview-container img{
       display: inherit;
     }
-   
+
+    #inputMsg{
+      margin: 0 10%;
+    }
   }
 
+  @media only screen and (max-width: 1199px) {
+    .grid-container{
+      grid-template-rows: 15% 65% 20%;
+    }
+  }
+
+  @media only screen and (max-width:375px){
+    .grid-container{
+      grid-template-rows: 5% 72% 23%;
+    }
+    .button-container{
+        flex-direction: column;  
+        gap: 20px;              
+    }
+
+    
+}

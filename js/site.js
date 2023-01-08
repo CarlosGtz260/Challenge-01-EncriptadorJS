@@ -3,10 +3,12 @@ const resultDiv =
         "<textarea id='outputText'></textarea>"+
     "</div>"+
     "<div class='button-container'>"+
-        "<button id='btnCopy' onclick='copy()'>Copiar</button>"+
+        "<button id='btnCopy' onclick='copy()' order='2'>Copiar</button>"+
     "</div> ";
 
-
+function eliminarDiacriticos(text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+}
 
 
 function encrypt(text){
@@ -29,7 +31,7 @@ function decrypt(encrypted){
 }
 
 function init(type){
-    var inputText = document.querySelector("#inputText").value;
+    var inputText = eliminarDiacriticos(document.querySelector("#inputText").value);
     var outputText = "";
     if(inputText != "" && inputText != undefined){
         if(type == 0){

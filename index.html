@@ -4,29 +4,32 @@
         <meta http-equiv="content-type" content="text/html; utf-8">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/site.css">
+        <link rel="shortcut icon" href="img/favicon.ico" />
         <script src="js/site.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Encriptador | Oracle+AluraLATAM</title>
+        <title>Cifrador | Alura Challenge One</title>
     </head>
     <body>
-        <header>
-        </header>
         <main>
             <div class="grid-container">
                 <div class="grid-item">
                     <div id="logo">
                         <img src="img/logo.svg" alt="Logo Alura">
                     </div>
-                    <div id="encrypter">                        
-                        <textarea id="inputText" name="inputText" placeholder="Ingrese el texto aqui"></textarea>                        
+                </div>
+                <div class="grid-item" id="inputMsg">                    
+                    <div class="input-container">
+                                                
+                        <textarea id="inputText" name="inputText" placeholder="Ingrese el texto aqui"></textarea>    
+                        <p>
+                            <img src="img/bi_exclamation-circle-fill.svg" alt="exclamación">
+                            Solo letras minúsculas y sin acentos
+                        </p>                    
                     </div> 
-                    <div class="legend-container">
-                        <img src="img/bi_exclamation-circle-fill.svg" alt="exclamación">
-                        <p>Solo letras minúsculas y sin acentos</p>
-                    </div>
+                   
                     <div class="button-container">
-                        <button id="enc" onclick="init(0)">Encriptar</button>
-                        <button onclick="init(1)">Desencriptar</button>
+                        <button id="enc" onclick="init(0)" order="0">Encriptar</button>
+                        <button onclick="init(1)" order="1">Desencriptar</button>
                     </div>                   
                 </div>
                 <div class="grid-item" id="outputMsg">
@@ -39,6 +42,8 @@
             </div>
 
         </main>
-        <footer></footer>
+        <footer>
+            <p>Carlos Gutiérrez Gallardo | © Enero 2023 Todos los derechos reservados</p>             
+        </footer>
     </body>
 </html>
